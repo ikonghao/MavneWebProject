@@ -15,6 +15,7 @@
 	</properties>
 	
 	<modules>
+		<module>../webbusiness</module>
 		<module>../webdemoservlet</module>
 		<module>../webdemo Maven Webapp</module>
 	</modules>

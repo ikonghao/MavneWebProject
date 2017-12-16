@@ -7,6 +7,9 @@
         <dependent-module archiveName="webdemoservlet-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/webdemoservlet/webdemoservlet">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="webbusiness-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/webbusiness/webbusiness">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="context-root" value="webdemo"/>
         <property name="java-output-path" value="/webdemo Maven Webapp/target/classes"/>
     </wb-module>
