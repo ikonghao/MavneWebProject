@@ -1,32 +1,33 @@
 package com.imooc.webbusiness.entity;
 
 public class IndexEntity {
-	public int getID() {
-		return ID;
+	
+	int id;
+	public int getId() {
+		return id;
 	}
-	public void setID(int iD) {
-		ID = iD;
+	public void setId(int id) {
+		this.id = id;
 	}
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String name) {
-		Name = name;
+		this.name = name;
 	}
 	public int getAge() {
-		return Age;
+		return age;
 	}
 	public void setAge(int age) {
-		Age = age;
+		this.age = age;
 	}
 	public String getDesc() {
-		return Desc;
+		return desc;
 	}
 	public void setDesc(String desc) {
-		Desc = desc;
+		this.desc = desc;
 	}
-	int ID;
-	String Name;
-	int Age;
-	String Desc;
+	String name;
+	int age;
+	String desc;
 }

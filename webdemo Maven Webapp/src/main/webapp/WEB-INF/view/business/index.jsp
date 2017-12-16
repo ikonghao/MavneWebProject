@@ -27,10 +27,13 @@
 	This is my JSP page.
 	<br /> business
 	<br /> model
-	<div>id:${entity.ID}</div>
+	<div>id:${entity.id}</div>
 	<div>name:${entity.name}</div>
 	<div>age:${entity.age}</div>
 	<div>desc:${entity.desc}</div>
 	
 	</body>
+	
+	
+	</form>
 	</html>

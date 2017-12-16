@@ -45,11 +45,22 @@ public class IndexController {
 		model.put("entity", entity);
 		return "index";
 	}
-@RequestMapping("index3")
+
+	@RequestMapping("index3")
 	public String index3(HttpServletRequest request) {
 		int id = Integer.valueOf(request.getParameter("id"));
 		IndexEntity entity = indexServer.getIndexEntityByID(id);
 		request.setAttribute("entity", entity);
 		return "index";
+	}
+
+	@RequestMapping("edit")
+	public String edit() {
+		return "edit";
+	}
+
+	@RequestMapping("save")
+	public String save(IndexEntity entity) {
+		return "redirect:index3?id=180";
 	}
 }
