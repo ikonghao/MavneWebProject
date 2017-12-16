@@ -34,6 +34,7 @@ public class IndexController {
 	@RequestMapping(value = "index", method = RequestMethod.GET)
 	public String index(@RequestParam("id") int id, Model model) {
 		log.debug("in viewCourse,id={}", id);
+		log.debug("===========================================================");
 		IndexEntity entity = indexServer.getIndexEntityByID(id);
 		model.addAttribute("entity", entity);
 		return "index";
