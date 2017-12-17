@@ -22,13 +22,9 @@
 
 	<!-- 访问静态资源 -->
 	<mvc:default-servlet-handler />
-	<!-- 静态资源处理 css js img  -->
+	<!-- 静态资源处理 css js img -->
 	<mvc:resources location="/resourcess/" mapping="resourcess/**"></mvc:resources>
 	<!-- 视图解析器 -->
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/view/demo/"></property>
-		<property name="suffix" value=".jsp"></property>
-	</bean>
+
 
 </beans>
