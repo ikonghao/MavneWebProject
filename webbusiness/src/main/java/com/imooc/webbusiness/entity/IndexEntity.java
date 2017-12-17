@@ -1,8 +1,6 @@
 package com.imooc.webbusiness.entity;
 
 public class IndexEntity {
-	
-	int id;
 	public int getId() {
 		return id;
 	}
@@ -27,6 +25,7 @@ public class IndexEntity {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+	int id;
 	String name;
 	int age;
 	String desc;

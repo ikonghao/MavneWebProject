@@ -13,10 +13,12 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
@@ -81,14 +83,22 @@ public class IndexController {
 	/* 上传文件 */
 	@RequestMapping(value = "doUpload", method = RequestMethod.POST)
 	public String doUpload(@RequestParam("file") MultipartFile file) throws IOException {
-		
+
 		if (!file.isEmpty()) {
 			log.debug("正在处理文件,{}" + file.getOriginalFilename());
-			String fileName="F:\\Code\\git\\MavneWebProject\\testFile\\"+System.currentTimeMillis()+file.getOriginalFilename();
-			FileUtils.copyInputStreamToFile(file.getInputStream(),new File(fileName));
-			
+			String fileName = "F:\\Code\\git\\MavneWebProject\\testFile\\" + System.currentTimeMillis()
+					+ file.getOriginalFilename();
+			FileUtils.copyInputStreamToFile(file.getInputStream(), new File(fileName));
+
 		}
-		
+
 		return "success";
+	}
+
+	
+	@RequestMapping(value="getEntity/{id}",method=RequestMethod.GET)
+	public @ResponseBody  IndexEntity getIndexEntityJson(@PathVariable("id") int id) {
+		IndexEntity entity = indexServer.getIndexEntityByID(id);
+		return entity;
 	}
 }
