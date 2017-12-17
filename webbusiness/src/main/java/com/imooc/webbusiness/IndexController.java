@@ -11,6 +11,8 @@ import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -100,5 +102,11 @@ public class IndexController {
 	public @ResponseBody  IndexEntity getIndexEntityJson(@PathVariable("id") int id) {
 		IndexEntity entity = indexServer.getIndexEntityByID(id);
 		return entity;
+	}
+	
+	@RequestMapping(value="getEntityType/{id}",method=RequestMethod.GET)
+	public   ResponseEntity<IndexEntity> getIndexEntityJson2(@PathVariable("id") int id) {
+		IndexEntity entity = indexServer.getIndexEntityByID(id);
+		return new ResponseEntity<IndexEntity>(entity,HttpStatus.OK);
 	}
 }
